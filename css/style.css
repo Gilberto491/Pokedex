@@ -1,0 +1,91 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+    background-color: rgba(173, 170, 170, 0.76); 
+    background: url("../img/fundo.png") no-repeat; 
+    font-family: monospace;
+    font-size: 12px;
+    margin-top: 24px;
+}
+
+main {
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#dadosPokemon {
+    background: url("../img/pokedex.jpg") no-repeat;
+    background-size: 100% ;
+    padding: 85px 30px 0 30px;
+    height: 356px;
+    border-radius: 11px;
+    position: relative;
+}
+
+#dadosPokemon ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0;
+}
+
+#poderes {
+    width: 50px;
+    height: 50px;
+    top: 10px;
+    left: 31px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+#buscaPokemon input, 
+#buscaPokemon button {
+    display: block;
+    margin-top: 8px;
+    line-height: 24px;
+    padding: 4px 12px;
+    width: 100%;
+    border-radius: 12px;
+    appearance: none;
+    border: 1px solid black;
+    outline: 0;
+}
+
+#buscaPokemon button {
+    background-color: #f03335;
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#buscaPokemon button:focus {
+    border-radius: 12px;
+    outline: none;
+    border-color: darkblue;
+}
+
+#buscaPokemon button:hover{
+    background-color: #af1d20;
+}
+
+#nome {
+    min-height: 24px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+#mensagem {
+    height: 24px;
+    margin: 8px 0 0 0;
+}
+
+#tela {
+   padding: 24px;
+   height: 258px;
+   overflow: hidden;
+}
+
