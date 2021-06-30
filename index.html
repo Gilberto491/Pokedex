@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>PokeDex</title>
+</head>
+<body> 
+    
+   <!--<img id="audio" src="img/audio.png" height="20px">--> 
+
+    <main>
+        <div id="dadosPokemon">
+
+            <div id="poderes"></div>
+
+            <div id="tela">
+                <h2 id="nome"></h2>
+                <img height="112" width="112" alt="imagem do pokemon" id="imagem" />
+                <ul>
+                    <li id="altura"></li>
+                    <li id="peso"></li>
+                    <li id="tipos"></li>
+                    <li id="status"></li>
+                </ul>
+            </div>
+        </div>
+        <p id="mensagem"></p>
+        
+        <div id="buscaPokemon">
+            <form id="formularioBusca">
+                <input type="number" min="1" max="893" id="campoPokemonId" placeholder="digite o id do pokemon" required />
+                <button>Buscar</button>
+            </form>
+            <br/>
+            <p id="audio"></p>
+
+            <button id="botaoPegarAleatorio">Estou com sorte</button> <br>
+
+           <!-- <audio src="media/audio.mp3" autoplay controls loop></audio> -->
+
+        </div>
+    
+    </main>
+
+    
+    <script src="src/pokeApi.js"></script>
+    <script src="src/pokemon.js"></script>
+    <script src="src/index.js"></script>
+</body>
+</html>
