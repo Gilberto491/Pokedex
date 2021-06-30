@@ -10,7 +10,6 @@ const poderes = document.getElementById( 'poderes' );
 const tipos = document.getElementById( 'tipos' );
 const status = document.getElementById( 'status' );
 const formularioBusca = document.getElementById( 'formularioBusca' );
-const audio = document.getElementById(' audio ');
 
 botaoPegarAleatorio.onclick = () => pegaPokemon();
 
