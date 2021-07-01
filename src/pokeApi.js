@@ -1,7 +1,6 @@
 class PokeApi {// eslint-disable-line no-unused-vars
   constructor() {
     this._api = 'https://pokeapi.co/api/v2/pokemon/';
-    //this._audio = "https://pokemoncries.com/cries-old";
   }
 
   buscarTodos() {

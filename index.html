@@ -7,42 +7,42 @@
     <title>PokeDex</title>
 </head>
 <body> 
-
     <main>
-        <div id="dadosPokemon">
-
+        
+        <div id="tela-topo">
             <div id="poderes"></div>
+        </div>
 
-            <div id="tela">
-                <h2 id="nome"></h2>
-                <img height="112" width="112" alt="imagem do pokemon" id="imagem" />
-                <ul>
-                    <li id="altura"></li>
-                    <li id="peso"></li>
-                    <li id="tipos"></li>
-                    <li id="status"></li>
-                </ul>
+        <div id="tela-meio">
+            <div id="dadosPokemon">
+                    <h2 id="nome"></h2>
+                    <img height="180" width="180" alt="imagem do pokemon" id="imagem" />
+                    <ul>
+                        <li id="altura"></li>
+                        <li id="peso"></li>
+                        <li id="tipos"></li>
+                        <li id="status"></li>
+                    </ul>
+                <div id="audio"></div>
             </div>
         </div>
-        <p id="mensagem"></p>
-        
+        <div id="tela-base"></div>
+
+        <p id="mensagemId"></p>
+
         <div id="buscaPokemon">
             <form id="formularioBusca">
                 <input type="number" min="1" max="893" id="campoPokemonId" placeholder="digite o id do pokemon" required />
                 <button>Buscar</button>
             </form>
             <br/>
-            <p id="audio"></p>
-
             <button id="botaoPegarAleatorio">Estou com sorte</button> <br>
-
         </div>
-    
     </main>
 
-    
     <script src="src/pokeApi.js"></script>
     <script src="src/pokemon.js"></script>
     <script src="src/index.js"></script>
+
 </body>
 </html>

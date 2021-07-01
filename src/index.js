@@ -3,13 +3,14 @@ const nome = document.getElementById( 'nome' );
 const imagem = document.getElementById( 'imagem' );
 const altura = document.getElementById( 'altura' );
 const peso = document.getElementById( 'peso' );
-const mensagem = document.getElementById( 'mensagem' );
+const mensagemId = document.getElementById( 'mensagemId' );
 const campoPokemonId = document.getElementById( 'campoPokemonId' );
 const botaoPegarAleatorio = document.getElementById( 'botaoPegarAleatorio' );
 const poderes = document.getElementById( 'poderes' );
 const tipos = document.getElementById( 'tipos' );
 const status = document.getElementById( 'status' );
 const formularioBusca = document.getElementById( 'formularioBusca' );
+const audio = document.getElementById( 'audio' );
 
 botaoPegarAleatorio.onclick = () => pegaPokemon();
 
@@ -24,6 +25,18 @@ function renderizaCarregandoPokemon() {
   return renderizaPokemon( { imagem, coresPoder: ['#f03335'] } )
 }
 
+function renderizaAudio(id) {
+  audio.innerHTML = '';
+  if(!id) return
+  const element = document.createElement("audio");
+  element.controls = 'on';
+  element.src = `https://pokemoncries.com/cries/${id}.mp3`;
+  element.volume = 0.3;
+  element.autoplay = 'on';
+  element.style.width = '255px';
+  audio.appendChild(element);
+}
+
 function renderizaPokemon( pokemon = {} ) {
   const cor1 = pokemon.coresPoder ? pokemon.coresPoder[0] : 'transparent';
   const cor2 = pokemon.coresPoder ? pokemon.coresPoder[1] || cor1 : cor1;
@@ -33,8 +46,10 @@ function renderizaPokemon( pokemon = {} ) {
   altura.innerHTML = pokemon.altura || '';
   peso.innerHTML = pokemon.peso || '';
   tipos.innerHTML = pokemon.poderes || '';
-  mensagem.innerHTML = pokemon.id || '';
+  mensagemId.innerHTML = pokemon.formatedId || '';
   status.innerHTML = pokemon.status || '';
+  renderizaAudio(pokemon.id);
+  
 }
 
 function pegaPokemon( pokemonId ) {
@@ -43,9 +58,9 @@ function pegaPokemon( pokemonId ) {
     return pokeApi.buscarPorId( pokemonId )
       .then( pokemon => {
         const poke = new Pokemon( pokemon );
-        mensagem.innerHTML = '';
+        mensagemId.innerHTML = '';
         return renderizaPokemon( poke );
-      } ).catch( () => mensagem.innerHTML = 'Digite um id válido' );
+      } ).catch( () => mensagemId.innerHTML = 'Digite um id válido' );
   }
   return pokeApi.buscarAleatorio().then( pokemon => {
     const poke = new Pokemon( pokemon );

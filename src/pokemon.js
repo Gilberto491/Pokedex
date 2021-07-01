@@ -44,6 +44,10 @@ class Pokemon {// eslint-disable-line no-unused-vars
   }
 
   get id() {
+    return this._id;
+  }
+
+  get formatedId() {
     return `id: ${ this._id }`;
   }
 
